@@ -1,8 +1,12 @@
-# Started from Tello Template
-# This Python app is in the Public domain
-# Some parts from Tello3.py
+# Programmer: Brayden Scheffers
+# Program: Playground
+# Date: 21.4.2023
 
-import threading, socket, sys, time, subprocess
+import threading
+import socket
+import sys
+import time
+import subprocess
 
 
 # GLOBAL VARIABLES DECLARED HERE....
@@ -30,7 +34,7 @@ def recv():
             break
 
 
-def sendmsg(msg, sleep = 6):
+def sendmsg(msg, sleep = 3):
     print("Sending: " + msg)
     msg = msg.encode(encoding="utf-8")
     sock.sendto(msg, tello_address)
@@ -44,9 +48,9 @@ recvThread.start()
 # CREATE FUNCTIONS HERE....
 
 
-print("\nFirst & Last Names")
-print("Program Name: ")
-print("Date: ")
+print("\nBrayden Scheffers & Grayson Nichols")
+print("Program Name: Playground")
+print("Date: 21.4.2023")
 print("\n****CHECK YOUR TELLO WIFI ADDRESS****")
 print("\n****CHECK SURROUNDING AREA BEFORE FLIGHT****")
 ready = input('\nAre you ready to take flight: ')
@@ -59,8 +63,8 @@ try:
         sendmsg('command', 0)
         sendmsg('takeoff')
 
-        # Review the (SDK) Software Development Kit resource for Drone Commands
-        # Delete these comments before writing your program
+        sendmsg('flip b')
+        sendmsg('flip b')
 
         sendmsg('land')
 
