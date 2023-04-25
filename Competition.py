@@ -30,7 +30,7 @@ def recv():
             break
 
 
-def sendmsg(msg, sleep = 10):
+def sendmsg(msg, sleep = 6):
     print("Sending: " + msg)
     msg = msg.encode(encoding="utf-8")
     sock.sendto(msg, tello_address)
@@ -57,13 +57,13 @@ try:
     if ready.lower() == 'yes':
         print("\nStarting Drone!\n")
 
-        sendmsg('command', 0)
-        sendmsg('takeoff',)
+        sendmsg('command',0)
+        sendmsg('takeoff')
 
-        sendmsg("up 30", 6)
-        sendmsg("forward 200", 6)
-        sendmsg('go 160 -25 50 60', 8)
-        sendmsg('curve 110 110 0 110 220 0 30', 10)
+        sendmsg("up 20", 3)
+        sendmsg("forward 190", 3)
+        sendmsg('go 150 -20 40 50', 3)
+        sendmsg('curve 110 110 0 110 220 0 30', 2)
 
         sendmsg('land')
 
